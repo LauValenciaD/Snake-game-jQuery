@@ -6,13 +6,14 @@ $(document).ready(function () {
     velocidad,
     intervalo,
     celdaFruta,
-    puntuacion,
     tamanioTabla,
     juegoEmpezado,
     celdaSnake,
     cabezaSnake;
+  var puntuacionMasAlta = 0;
+  var puntuacion;
 
-  // Mapeo de direcciones con desplazamiento en filas y columnas
+  // Mapeo de direcciones en filas y columnas
   const coordenadasTabla = {
     ArrowRight: [0, 1],
     ArrowLeft: [0, -1],
@@ -41,7 +42,7 @@ $(document).ready(function () {
     // Cabeza
     cabezaSnake = [2, 6];
 
-    $("#puntuacion").html("Tu puntuación: 0");
+    $("#puntuacion").html("Puntuación: 0");
 
     // Limpia el tablero de celdas anteriores
     $("td").removeClass("celdaSnake cabezaSnake celdaFruta");
@@ -96,6 +97,10 @@ $(document).ready(function () {
   function gameOver() {
     juegoEmpezado = false; // Detiene el juego
     clearInterval(intervalo); // Detiene el intervalo
+    if (puntuacion > puntuacionMasAlta) {
+      puntuacionMasAlta = puntuacion;
+    }
+    $("#masAlta").html("Tu puntuación más alta: " + puntuacionMasAlta + "🏆");
     $(".botones").fadeIn();
     $("#btnRestart").fadeIn(); // Muestra el boton de reinicio
   }
@@ -137,10 +142,8 @@ $(document).ready(function () {
       celdaSnake.push([]);
       generarFruta();
       puntuacion += 10;
-      $("#puntuacion").html("Tu puntuación: " + puntuacion);
+      $("#puntuacion").html("Puntuación: " + puntuacion);
       velocidad = Math.max(50, velocidad - 20); // Aumenta la velocidad al comer una fruta, no puede ser menos de 50
-
-      console.log("Nueva velocidad: " + velocidad); // Para ver la velocidad actual (en ms)
       clearInterval(intervalo); // Detiene el intervalo actual
       intervalo = setInterval(moverSnake, velocidad); // Reinicia el intervalo con la nueva velocidad
     }
@@ -166,7 +169,8 @@ $(document).ready(function () {
     if (juegoEmpezado) return;
     juegoEmpezado = true;
     $(".botones").hide();
-    console.log("Velocidad de incio: " + velocidad);
+    $("h1").removeClass("antesDeEmpezar");
+    $("h1").addClass("despues");
     intervalo = setInterval(moverSnake, velocidad);
   }
 

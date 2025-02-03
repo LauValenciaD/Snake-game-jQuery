@@ -4,17 +4,23 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
+  background-image: url(/img/bg.png);
+  background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+  background-position: center; /* Centra la imagen */
 }
+
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-h1 {
-  color: #0ab66b;
+h2 {
+  color: #0f5e3c;
   text-align: center;
+  font-size: large;
+  font-weight: 400;
 }
 
 table {
@@ -70,9 +76,53 @@ td.celdaFruta {
   padding: 10px 0;
 }
 footer {
+  width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   text-align: center;
   padding: 10px;
+  color: #ffffff;
+}
+.antesDeEmpezar {
+  font-family: "Orbitron", sans-serif; /* Fuente futurista */
+  font-size: 4em;
+  text-align: center;
+  color: #00ff00; /* Verde brillante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px #00ff00, 0 0 5px #00ff00; /* Sombra intensa */
+  letter-spacing: 5px; /* Espaciado entre letras */
+  padding: 20px;
+  background: linear-gradient(
+    45deg,
+    #ff0040,
+    #800080
+  ); /* Degradado de colores */
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glow 1.5s ease-in-out infinite alternate; /* Animación de resplandor */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #82ec82, 0 0 20px #5ceb5c, 0 0 30px #85fc85;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff0040, 0 0 30px #ff0040, 0 0 40px #800080;
+  }
+}
+.despues {
+  font-family: "Orbitron", sans-serif; /* Fuente futurista */
+  font-size: 4em;
+  text-align: center;
+  color: #5cf55c;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px #5cf55c, 0 0 5px #5cf55c; /* Sombra intensa */
+  letter-spacing: 5px;
+  padding: 20px;
+  background: linear-gradient(
+    45deg,
+    #ff0040,
+    #800080
+  ); /* Degradado de colores */
+  -webkit-background-clip: text;
+  background-clip: text;
 }
