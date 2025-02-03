@@ -1,7 +1,7 @@
 # Snake game
 
 Este es el clásico juego de la serpiente, donde el objetivo es controlar a la serpiente para que coma las frutas que aparecen en el tablero.
-Pues jugar aquí: [link](https://lauvalenciad.github.io/Snake-game-jQuery/)
+Puedes jugar aquí: [link](https://lauvalenciad.github.io/Snake-game-jQuery/)
 
 ## Características
 
