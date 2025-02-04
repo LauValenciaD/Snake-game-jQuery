@@ -102,7 +102,8 @@ $(document).ready(function () {
     }
     $("#masAlta").html("Tu puntuación más alta: " + puntuacionMasAlta + "🏆");
     $(".botones").fadeIn();
-    $("#btnRestart").fadeIn(); // Muestra el boton de reinicio
+    $("#btnRestart").fadeIn(3000); // Muestra el boton de reinicio
+    $("#gameOver").fadeIn();
   }
 
   // Actualiza la posición de la serpiente
@@ -169,8 +170,7 @@ $(document).ready(function () {
     if (juegoEmpezado) return;
     juegoEmpezado = true;
     $(".botones").hide();
-    $("h1").removeClass("antesDeEmpezar");
-    $("h1").addClass("despues");
+    $("#gameOver").fadeOut();
     intervalo = setInterval(moverSnake, velocidad);
   }
 
