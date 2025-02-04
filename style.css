@@ -24,8 +24,8 @@ body {
   padding: 0;
   height: 100vh;
   background-image: url(img/bg3.png);
-  background-size: cover; /* Ajusta la imagen para cubrir toda el área */
-  background-position: center; /* Centra la imagen */
+  background-size: cover;
+  background-position: center;
 }
 
 section {
