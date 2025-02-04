@@ -85,12 +85,13 @@ $(document).ready(function () {
 
   // Pinta la fruta en el tablero
   function pintarFruta() {
-    $("td").removeClass("celdaFruta");
+    $("td").removeClass("celdaFruta").empty(); // Elimina la clase y cualquier contenido previo
     $("tr")
       .eq(celdaFruta[0])
       .find("td")
       .eq(celdaFruta[1])
-      .addClass("celdaFruta");
+      .addClass("celdaFruta")
+      .html('<img src="img/apple.png" width="7px" height="7px" alt="Fruta">'); // Agrega la imagen
   }
 
   // Finaliza el juego cuando la serpiente choca

@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url(img/bg.png);
+  background-image: url(img/bg3.png);
   background-size: cover; /* Ajusta la imagen para cubrir toda el área */
   background-position: center; /* Centra la imagen */
 }
@@ -42,6 +42,8 @@ h3 {
 }
 
 table {
+  table-layout: fixed; /* Fuerza un tamaño fijo en las celdas */
+  border-collapse: collapse;
   width: 300px;
   height: 300px;
   background-color: #c8f0bf;
@@ -75,10 +77,6 @@ button:hover {
   box-shadow: 0px 0px 20px 0px rgba(74, 74, 74, 0.8);
 }
 
-td {
-  border-radius: 40%;
-}
-
 td.celdaSnake {
   background: #2dc494;
 }
@@ -87,8 +85,20 @@ td.cabezaSnake {
   background: #26a47c;
 }
 
-td.celdaFruta {
-  background: #de1c1c;
+td {
+  width: 12px !important;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 40%;
+  padding: 0;
+}
+
+td img {
+  width: 12px;
+  height: 12px;
+  display: block;
+  margin: 0;
+  object-fit: cover;
 }
 
 .botones {
